@@ -1,0 +1,198 @@
+<!DOCTYPE html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./resource/css/style.min.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="./resource/js/all.js"></script>
+</head>
+<body>
+    <dialog>
+        <form method="dialog">
+            <div class="dialog-header">
+                <div class="dialog-header-title">기술 숙련도</div>
+                <button value="close"></button>
+            </div>
+            <div class="dialog-body">
+                das
+            </div>
+            <!-- <div class="dialog-footer">
+                <button value="confirm">Confirm</button>
+            </div> -->
+        </form>
+    </dialog>
+    <header>
+        <div class="page-progress"></div>
+        <div class="logo"><a href="/index.html">Ju-log</a></div>
+        <nav>
+            <ul>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">My Blog</a></li>
+                <li><a href="#">AI Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="profile-container">
+        <section class="section-introduce">
+            <div class="profile">
+                <img src="/resource/image/tyler-nix-X2YO8KFxgEM-unsplash.jpg" alt="profile-image">
+            </div>
+            <h1 class="title icon-hi">안녕하세요! 대충 한 줄 소개하는 문장~</h1>
+            <div class="contents">
+                <div class="contents-line"></div>
+                <div class="contents-text">
+                    제 성격은 어쩌구 어쩌구 저쩌구 학창시절엔 어쩌구 저쩌쩌쩌꾸꾸 요리조리 제가 좋아하는건 요리조리 왔다갔따 관심이 많은건 이거저거 요즘 공부하는 분야는 어쩌구 저쩌구 뿅뿅
+                </div>
+            </div>
+        </section>
+        <section class="section-introduce">
+            <h1 class="title icon-list">아래 기술들을 활용할 수 있어요!</h1>
+            <div class="contents">
+                <div class="contents-progress">
+                    <div class="progress-group">
+                        <div class="group-title">Language</div>
+                        <div class="progress">
+                            <label for="stack1">Java</label>
+                            <div class="speech-bubble" style="left:70%">70%</div>
+                            <progress id="stack1" value="70" min="0" max="100"></progress>
+                        </div> 
+                        <div class="progress">
+                            <label for="stack2">MySQL</label>
+                            <div class="speech-bubble" style="left:50%">50%</div>
+                            <progress id="stack2" value="50" min="0" max="100"></progress>
+                        </div>
+                        <div class="progress">
+                            <label for="stack2">~~</label>
+                            <div class="speech-bubble" style="left:50%">50%</div>
+                            <progress id="stack2" value="50" min="0" max="100"></progress>
+                        </div>
+                    </div>
+                    <div class="progress-group">
+                        <div class="group-title">Framework</div>
+                        <div class="progress">
+                            <label for="stack3">Spring</label>
+                            <div class="speech-bubble" style="left:82%">82%</div>
+                            <progress id="stack3" value="82" min="0" max="100"></progress>
+                        </div>
+                        <div class="progress">
+                            <label for="stack4">Node.js</label>
+                            <div class="speech-bubble" style="left:50%">50%</div>
+                            <progress id="stack4" value="50" min="0" max="100"></progress>
+                        </div>
+                        <div class="progress">
+                            <label for="stack2">~~</label>
+                            <div class="speech-bubble" style="left:10%">10%</div>
+                            <progress id="stack2" value="10" min="0" max="100"></progress>
+                        </div>
+                    </div>
+                    <div class="progress-group">
+                        <div class="group-title">Tool</div>
+                        <div class="progress">
+                            <label for="stack3">IntelliJ</label>
+                            <div class="speech-bubble" style="left:70%">70%</div>
+                            <progress id="stack3" value="70" min="0" max="100"></progress>
+                        </div>
+                        <div class="progress">
+                            <label for="stack4">Eclipse</label>
+                            <div class="speech-bubble" style="left:80%">80%</div>
+                            <progress id="stack4" value="80" min="0" max="100"></progress>
+                        </div>
+                        <div class="progress">
+                            <label for="stack2">~~</label>
+                            <div class="speech-bubble" style="left:10%">10%</div>
+                            <progress id="stack2" value="10" min="0" max="100"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-introduce">
+            <h1 class="title icon-books">제가 작업한 프로젝트를 소개할게요!</h1>
+            <div class="contents">
+                <div class="contents-line"></div>
+                <div class="contents-text">작업중</div>
+            </div>
+        </section>
+        <section class="section-introduce">
+            <h1 class="title icon-handshake">편하게 연락주세요!</h1>
+            <div class="contents">
+                <div class="contents-line"></div>
+                <div class="contents-text">작업중</div>
+            </div>
+        </section>
+    </main>
+    <div class="middle-line"></div>
+    <footer>
+        <div class="footer-container">
+            <div class="copyright">@Copyright 2023. Julog. All right reserved</div>
+        </div>
+    </footer>
+    <script defer>
+        /**
+         * Typing 애니메이션 나타내기
+         * @param {element} Typing효과를 줄 요소
+         */
+        function typingText(_textElement) {
+            if(_textElement == undefined) {
+                console.log('undefined element');
+                return;
+            }
+            let text = _textElement.innerHTML;
+            let textArray = text.split('');
+            let delay = 1000; // ms
+            let speed = 120; // ms
+
+            // Element에 커서 추가
+            _textElement.classList.add("typing-cursor");
+
+            _textElement.innerHTML = '';
+            textArray.forEach((char) => {
+                setTimeout(() => _textElement.innerHTML += (char), delay);
+                delay += speed;
+            });
+            // 커서 깜빡임 효과
+            setTimeout(() => {
+                document.documentElement.style.setProperty('--typing-anistate', 'running');
+            }, 1000+textArray.length*speed);
+        }
+        typingText(document.querySelector('.title'));
+
+        function playProgress() {
+            console.log(document.querySelectorAll('progress'));
+        }
+        playProgress();
+
+        // Page Progress
+        let lastScrollTop = 0;
+        let ticking = false;
+        function movePagePreogress(_scrollPos) {
+            let scrollY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollPercent = _scrollPos/scrollY;
+            document.documentElement.style.setProperty('--page-progress', scrollPercent);
+        }
+        // Scroll Event 최적화
+        window.addEventListener('scroll', function(e) {
+            lastScrollTop = document.body.scrollTop;
+
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    movePagePreogress(lastScrollTop);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // const button = document.querySelector("button");
+        // const dialog = document.querySelector("dialog");
+        // button.addEventListener("click", () => {
+        //     dialog.showModal();
+        // });
+        // dialog.addEventListener('close', () => {
+        //     console.log(dialog.returnValue);
+        // });
+    </script>
+</body>
+</html>

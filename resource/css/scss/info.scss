@@ -1,0 +1,31 @@
+@import "./reset.scss";
+
+/* SCSS - Variable(Color) */
+$GRAY_100: #111111;
+$GRAY_700: #777777;
+$GRAY_800: #a5a5a5;
+$GRAY_900: #eeeeee;
+$GRAY_1000: #ffffff;
+$RED_700: #ff3a2c;
+
+/* Header */
+header {margin-top:16px;}
+header .container {max-width:1240px;margin:0 auto;padding:16px 8px;}
+header .container h1 {font-size:4rem;}
+header .container .sub-title {font-size:1.6rem;color:$GRAY_700;}
+/* Footer */
+footer {padding:16px 0px;text-align:center}
+footer .copyright {max-width:1240px;margin:0 auto;padding:16px;text-align:center;font-size:1.2rem;color:$GRAY_800;}
+/* Main */
+main .container {max-width:1240px;margin:0 auto}
+
+/* IA */
+.ia-table {width:100%;table-layout:fixed}
+.ia-table thead tr {background-color:$GRAY_100}
+.ia-table thead tr th {padding:16px 8px;border-right:solid 1px $GRAY_1000;color:$GRAY_1000;text-align:left;font-size:1.6rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ia-table thead tr th:last-child {border-right:none}
+.ia-table tbody tr:hover td{background-color:$GRAY_900;}
+.ia-table tbody tr.page td {border-bottom:solid 1px $GRAY_100;background-color:$GRAY_900}
+.ia-table tbody tr td {padding:8px;border-bottom:solid 1px $GRAY_800;font-size:1.4rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ia-table tbody tr td.space {background-color:$GRAY_1000;border-bottom:none;}
+.ia-table tbody tr td.note {color:$RED_700}
