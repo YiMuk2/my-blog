@@ -8,6 +8,11 @@
     background-color: $COLOR_MAIN;
     color: $WHITE;
 }
+
+/* custom cursor */
+.cursor {position:fixed;top:0;left:0;width:32px;height:32px;border:1px solid $BLACK;border-radius:50%;background-color:$WHITE;background-image:none;mix-blend-mode:difference;pointer-events:none;z-index:100;transition:opacity .5s;}
+.cursor.off {opacity:0;}
+
 /* dialog */
 dialog {border:0;border-radius:4px;padding:0;}
 dialog::backdrop {backdrop-filter:blur(10px);transition:backdrop-filter .5s ease;}
@@ -38,8 +43,8 @@ footer .footer-container .copyright {color:$WHITE;text-align:center;}
 
 /* sections */
 .typing-cursor::after {content:'';animation: blink-cursor 1s linear infinite;animation-play-state:var(--typing-anistate);}
-.profile {position:relative;width:300px;height:300px;margin:0 auto;margin-bottom:32px;border-radius:50%;overflow:hidden}
-.profile img {position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);width:100%;}
+.section-introduce .profile {position:relative;width:300px;height:300px;margin:0 auto;margin-bottom:32px;border-radius:50%;overflow:hidden}
+.section-introduce .profile img {position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);width:100%;}
 .section-introduce {margin-top:128px;background-color:$WHITE;}
 .section-introduce:first-child {margin-top:32px;}
 .section-introduce .title {font-size:5rem;}
