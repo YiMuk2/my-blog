@@ -5,7 +5,7 @@
     --page-progress: 0;
 }
 ::selection {
-    background-color: $COLOR_MAIN;
+    background-color: $COLOR_MAIN_DARK;
     color: $WHITE;
 }
 
@@ -29,7 +29,7 @@ header .logo a {text-decoration:none;color:$COLOR_MAIN;font-weight:700;}
 header nav {float:right;}
 header nav ul li {float:left;margin-left:32px;}
 header nav ul li a {text-decoration:none;font-weight:700;transition:color .3s}
-header nav ul li a::after {content:'';display:block;width:100%;height:2px;background-color:$COLOR_MAIN;transform:scaleX(0);transition:transform .2s;}
+header nav ul li a::after {content:'';display:block;width:100%;height:2px;background-color:$COLOR_MAIN;transform:scaleX(0);transition:transform .2s;transform-origin:left;}
 header nav ul li a:hover {color:$COLOR_MAIN;}
 header nav ul li a:hover::after {transform:scaleX(1);}
 header .page-progress {position:absolute;left:0;top:0;width:100%;height:5px;background-color:$COLOR_MAIN;transition:transform .3s;transform:scaleX(var(--page-progress));transform-origin:center left;}
@@ -62,13 +62,31 @@ footer .footer-container .copyright {color:$WHITE;text-align:center;}
 .section-introduce .contents .contents-progress .progress-group .progress progress::-webkit-progress-value {border-radius:15px;background-color:$COLOR_MAIN}
 .section-introduce .contents .contents-progress .progress-group .progress .speech-bubble {position:absolute;padding:8px;line-height:1;border-radius:4px;background-color:$COLOR_MAIN;color:$WHITE;font-size:1.6rem;opacity:0;transform:translate(-50%,-50%);transition:opacity .5s ease-in-out, transform .5s ease-in-out;}
 .section-introduce .contents .contents-progress .progress-group .progress:hover .speech-bubble {opacity:1;transform: translate(-50%, -100%);}
-
+.section-introduce .contents .card-box {display:flex;gap:32px;justify-content:space-between;}
+.section-introduce .contents .card-box .card {position:relative;width:300px;height:300px;overflow:hidden;border:1px solid $COLOR_MAIN;border-radius:16px;}
+.section-introduce .contents .card-box .card:hover .card-contents {transform:translateY(-99%);}
+.section-introduce .contents .card-box .card:hover .card-background::after {backdrop-filter:blur(5px);}
+.section-introduce .contents .card-box .card .card-background {position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:5;}
+.section-introduce .contents .card-box .card .card-background img {position:relative;max-height:300px;top:0;left:50%;transform:translateX(-50%);}
+.section-introduce .contents .card-box .card .card-background::after {content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;transition:backdrop-filter .5s;z-index:6;}
+.section-introduce .contents .card-box .card .card-contents {position:absolute;top:100%;left:0;width:100%;max-height:100%;background-color:$COLOR_MAIN;transform:translateY(-63px);transition:transform .5s;z-index:7;}
+.section-introduce .contents .card-box .card .card-contents > div {display:block;font-size:2.4rem;font-weight:700;color:$WHITE;padding:16px;}
+.section-introduce .contents .card-box .card .card-contents > p {font-size:1.6rem;color:$WHITE;padding:0 16px 32px 16px;}
+.section-introduce .contents .more-portfolio {display:inline-block;margin-top:16px;font-size:1.6rem;}
+.section-introduce .contents .contents-connect {display:flex;gap:32px;justify-content:space-around;align-items:center;}
+.section-introduce .contents .contents-connect .connect-img {position:relative;width:250px;height:250px;border-radius:50%;overflow:hidden;}
+.section-introduce .contents .contents-connect .connect-img img {position:relative;left:50%;top:0;height:250px;transform:translateX(-50%);}
+.section-introduce .contents .contents-connect .connect-info {height:300px;flex-grow:1;}
+.section-introduce .contents .contents-connect .connect-info table {width:100%;height:100%;}
+.section-introduce .contents .contents-connect .connect-info table tr:hover {background-color:$GREY_01;}
+.section-introduce .contents .contents-connect .connect-info table tr td {padding:16px;vertical-align:middle;border-bottom:1px solid $COLOR_MAIN;font-size:1.6rem;}
+.section-introduce .contents .contents-connect .connect-info table tr td:first-child {font-size:1.8rem;font-weight:700;}
 
 /* icons, imoge */
-.icon-hi::before {content:'👋';margin-right:8px;}
-.icon-handshake::before {content:'🤝';margin-right:8px;}
-.icon-list::before {content:'🧾';margin-right:8px;}
-.icon-books::before {content:'📚';margin-right:8px;}
+.icon-hi::before {content:'👋';display:inline-block;margin-right:8px;animation-name:hand-shake;animation-duration:3s;animation-iteration-count:infinite;transform-origin:bottom right;}
+.icon-handshake::before {content:'🤝';display:inline-block;margin-right:8px;}
+.icon-list::before {content:'🧾';display:inline-block;margin-right:8px;}
+.icon-books::before {content:'📚';display:inline-block;margin-right:8px;}
 
 /* tablet */
 @media (width <= 1024px) {
@@ -78,17 +96,36 @@ footer .footer-container .copyright {color:$WHITE;text-align:center;}
     .section-introduce .contents .contents-progress .progress-group {margin-top:32px;}
     .section-introduce .contents .contents-progress .progress-group:first-child {margin-top:0;}
     .section-introduce .contents .contents-progress .progress-group .progress:first-child {margin-top:16px;}
+    .section-introduce .contents .contents-progress .progress-group .progress label {font-size:1.6rem;}
+    .section-introduce .contents .contents-progress .progress-group .group-title {font-size:2rem;}
+    .section-introduce .contents .card-box {display:block;}
+    .section-introduce .contents .card-box .card {display:block;width:100%;margin-top:32px;}
+    .section-introduce .contents .card-box .card:first-child {margin-top:0;}
+    .section-introduce .contents .card-box .card .card-background img {width:100%;max-height:none;height:auto;}
 }
 
 /* mobile */
 @media (width <= 512px) {
+    /* header */
+    header {padding:16px;}
+    header nav ul li {margin-left:16px;}
     /* sections */
     .profile {width:150px;height:150px;}
     .section-introduce {margin-top:64px;}
     .section-introduce .title {font-size:2.5rem;}
+    .section-introduce .contents .contents-connect .connect-img {display:none;}
 }
 
+/* animation */
 @keyframes blink-cursor {
     from {content:'|';}
     to {content:'';}
+}
+@keyframes hand-shake {
+    0% {transform:rotate(0deg);}
+    10% {transform:rotate(10deg);}
+    20% {transform:rotate(0deg);}
+    30% {transform:rotate(10deg);}
+    50% {transform:rotate(0deg);}
+    100% {transform:rotate(0deg);}
 }
